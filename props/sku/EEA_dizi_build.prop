@@ -1,0 +1,13 @@
+# Dizi EEA SKU properties
+# Source: vendor/build.prop from OS2.0.208.0.VNSEUXM ROM
+
+# Bluetooth
+bluetooth.device.default_name=Redmi Pad Pro
+
+# Device
+ro.product.odm.brand=Redmi
+ro.product.odm.model=23117RK66G
+ro.product.odm.name=dizi_eea
+
+# USB
+vendor.usb.product_string=Redmi Pad Pro

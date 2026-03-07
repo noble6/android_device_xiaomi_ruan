@@ -1,0 +1,7 @@
+prebuilt_etc {
+    name: "dizi_sku_properties",
+    srcs: [
+        "EEA_dizi_build.prop",
+    ],
+    device_specific: true,
+}

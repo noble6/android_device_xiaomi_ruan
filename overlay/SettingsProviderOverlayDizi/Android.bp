@@ -1,0 +1,36 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+// Dizi (Redmi Pad Pro) only has EEA SKU for now.
+// Poco/XIG05/CN variants commented out until those SKUs are confirmed.
+
+runtime_resource_overlay {
+    name: "SettingsProviderOverlayDizi",
+    manifest: "AndroidManifest-redmi.xml",
+    resource_dirs: ["res-redmi"],
+    vendor: true,
+}
+
+runtime_resource_overlay {
+    name: "SettingsProviderOverlayDiziEEA",
+    manifest: "AndroidManifest-redmi.xml",
+    resource_dirs: ["res-redmi"],
+    vendor: true,
+}
+
+// TODO: verify for dizi - uncomment when additional SKUs are confirmed
+// runtime_resource_overlay {
+//     name: "SettingsProviderOverlayDiziPoco",
+//     manifest: "AndroidManifest-poco.xml",
+//     resource_dirs: ["res-poco"],
+//     vendor: true,
+// }
+// runtime_resource_overlay {
+//     name: "SettingsProviderOverlayDiziRedmiCN",
+//     manifest: "AndroidManifest-redmiCn.xml",
+//     resource_dirs: ["res-redmiCn"],
+//     vendor: true,
+// }
+

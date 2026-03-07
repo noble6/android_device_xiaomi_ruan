@@ -1,0 +1,22 @@
+//
+// SPDX-FileCopyrightText: The LineageOS Project
+// SPDX-License-Identifier: Apache-2.0
+//
+
+runtime_resource_overlay {
+    name: "FrameworkOverlayDizi",
+    vendor: true,
+}
+runtime_resource_overlay {
+    name: "FrameworkOverlayDiziGLEsim",
+    manifest: "AndroidManifestGLEsim.xml",
+    resource_dirs: ["res-Esim"],
+    vendor: true,
+}
+
+runtime_resource_overlay {
+    name: "FrameworkOverlayDiziJPEsim",
+    manifest: "AndroidManifestJPEsim.xml",
+    resource_dirs: ["res-Esim"],
+    vendor: true,
+}
