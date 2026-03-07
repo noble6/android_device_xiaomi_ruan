@@ -5,7 +5,6 @@
 vendor/app/CACertService/CACertService.apk
 vendor/app/CneApp/CneApp.apk
 vendor/app/IWlanService/IWlanService.apk
-vendor/app/QFingerprintService/QFingerprintService.apk
 vendor/app/TimeService/TimeService.apk
 vendor/app/TrustZoneAccessService/TrustZoneAccessService.apk
 
@@ -104,7 +103,6 @@ vendor/bin/hw/android.hardware.wifi@1.0-service
 vendor/bin/hw/capabilityconfigstoretest
 vendor/bin/hw/dolbycodec2
 vendor/bin/hw/hostapd
-vendor/bin/hw/qfp-daemon
 vendor/bin/hw/vendor.display.color@1.0-service
 vendor/bin/hw/vendor.dolby.hardware.dms@2.0-service
 vendor/bin/hw/vendor.dolby.media.c2@1.0-service
@@ -346,7 +344,6 @@ vendor/etc/init/poweropt-service.rc
 vendor/etc/init/qapeservice.rc
 vendor/etc/init/qdcmss.rc
 vendor/etc/init/qesdk-manager.rc
-vendor/etc/init/qfp-daemon.rc
 vendor/etc/init/qguard.rc
 vendor/etc/init/qseecomd.rc
 vendor/etc/init/qttestservice.rc
@@ -875,7 +872,6 @@ vendor/etc/permissions/android.software.verified_boot.xml
 vendor/etc/permissions/android.software.vulkan.deqp.level.xml
 vendor/etc/permissions/handheld_core_hardware.xml
 vendor/etc/permissions/noRil/apq_excluded_telephony_features.xml
-vendor/etc/permissions/qti_fingerprint_interface.xml
 vendor/etc/permissions/sku_parrot/android.hardware.sensor.accelerometer.xml
 vendor/etc/permissions/sku_parrot/android.hardware.sensor.compass.xml
 vendor/etc/permissions/sku_parrot/android.hardware.sensor.gyroscope.xml
@@ -1048,7 +1044,6 @@ vendor/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.tidaservice.xml
 vendor/etc/vintf/manifest/manifest_vendor.xiaomi.hardware.vsimapp.xml
 vendor/etc/vintf/manifest/mi-misight.xml
 vendor/etc/vintf/manifest/power.xml
-vendor/etc/vintf/manifest/qfp-daemon.xml
 vendor/etc/vintf/manifest/vendor.dolby.hardware.dms.xml
 vendor/etc/vintf/manifest/vendor.qti.diag.hal.service.xml
 vendor/etc/vintf/manifest/vendor.qti.hardware.display.allocator-service.xml
@@ -1338,7 +1333,6 @@ vendor/lib64/android.hardware.automotive.vehicle@2.0-manager-lib.so
 vendor/lib64/android.hardware.automotive.vehicle@2.0.so
 vendor/lib64/android.hardware.biometrics.common-V1-ndk_platform.so
 vendor/lib64/android.hardware.biometrics.face-V1-ndk_platform.so
-vendor/lib64/android.hardware.biometrics.fingerprint-V1-ndk_platform.so
 vendor/lib64/android.hardware.bluetooth.audio@2.0.so
 vendor/lib64/android.hardware.bluetooth.audio@2.1.so
 vendor/lib64/android.hardware.bluetooth@1.0.so
@@ -2010,7 +2004,6 @@ vendor/lib64/libqdpr.so
 vendor/lib64/libqdutils.so
 vendor/lib64/libqesdk.so
 vendor/lib64/libqesdk_manager.so
-vendor/lib64/libqfp-service.so
 vendor/lib64/libqisl.so
 vendor/lib64/libqll.so
 vendor/lib64/libqll10.so
@@ -2301,7 +2294,6 @@ vendor/lib64/vendor.qti.hardware.embmssl@1.0.so
 vendor/lib64/vendor.qti.hardware.embmssl@1.1.so
 vendor/lib64/vendor.qti.hardware.factory@1.0.so
 vendor/lib64/vendor.qti.hardware.factory@1.1.so
-vendor/lib64/vendor.qti.hardware.fingerprint@1.0.so
 vendor/lib64/vendor.qti.hardware.fm@1.0.so
 vendor/lib64/vendor.qti.hardware.iop@1.0.so
 vendor/lib64/vendor.qti.hardware.iop@2.0.so
@@ -3398,7 +3390,6 @@ vendor/lib/vendor.qti.hardware.display.mapperextensions@1.2.so
 vendor/lib/vendor.qti.hardware.dpmservice@1.0.so
 vendor/lib/vendor.qti.hardware.dpmservice@1.1.so
 vendor/lib/vendor.qti.hardware.dsp@1.0.so
-vendor/lib/vendor.qti.hardware.fingerprint@1.0.so
 vendor/lib/vendor.qti.hardware.fm@1.0.so
 vendor/lib/vendor.qti.hardware.iop@1.0.so
 vendor/lib/vendor.qti.hardware.iop@2.0.so

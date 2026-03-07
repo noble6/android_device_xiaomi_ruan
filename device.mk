@@ -63,7 +63,8 @@ PRODUCT_PACKAGES += \
     libagm_pcm_plugin \
     libagmclient \
     libbatterylistener \
-    libfmpal \
+    # TODO: FM radio — dizi is a tablet with no FM hardware; skip
+    # libfmpal \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
@@ -156,14 +157,6 @@ PRODUCT_PACKAGES += \
 # Fastbootd
 PRODUCT_PACKAGES += \
     fastbootd
-
-# Fingerprint
-PRODUCT_PACKAGES += \
-    android.hardware.biometrics.fingerprint-service.xiaomi \
-    libudfpshandler
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.fingerprint.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.fingerprint.xml
 
 # Graphics
 PRODUCT_COPY_FILES += \
