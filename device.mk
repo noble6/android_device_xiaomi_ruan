@@ -63,13 +63,12 @@ PRODUCT_PACKAGES += \
     libagm_pcm_plugin \
     libagmclient \
     libbatterylistener \
-    # TODO: FM radio — dizi is a tablet with no FM hardware; skip
-    # libfmpal \
     libqcompostprocbundle \
     libqcomvisualizer \
     libqcomvoiceprocessing \
     libsndcardparser \
     libvolumelistener
+# NOTE: libfmpal excluded — dizi (Redmi Pad Pro / POCO Pad) is a tablet with no FM radio hardware
 
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8450/audio/primary-hal
 
@@ -203,11 +202,7 @@ PRODUCT_PACKAGES += \
     IPACM_Filter_cfg.xml
 
 # IR
-PRODUCT_PACKAGES += \
-    android.hardware.ir-service.lineage
-
-PRODUCT_COPY_FILES += \
-    frameworks/native/data/etc/android.hardware.consumerir.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.consumerir.xml
+# NOTE: dizi is a tablet with no IR blaster hardware — IR section removed
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -261,6 +256,7 @@ PRODUCT_PACKAGES += \
     SettingsProviderOverlayDizi \
     SettingsProviderOverlayDiziEEA \
     SystemUIOverlayDizi \
+    TelephonyOverlayDizi \
     WifiOverlayDizi
 
 PRODUCT_PACKAGES += \
@@ -306,7 +302,6 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.sensor.light.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.light.xml \
     frameworks/native/data/etc/android.hardware.sensor.proximity.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.proximity.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepcounter.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepcounter.xml \
-    frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml \
     frameworks/native/data/etc/android.hardware.sensor.stepdetector.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.sensor.stepdetector.xml
 
 # Soong namespaces
@@ -317,7 +312,7 @@ PRODUCT_SOONG_NAMESPACES += \
     hardware/lineage/interfaces/power-libperfmgr \
     hardware/qcom-caf/common/libqti-perfd-client \
     hardware/qcom-caf/wlan \
-   hardware/xiaomi
+    hardware/xiaomi
 
 # Telephony
 PRODUCT_PACKAGES += \
