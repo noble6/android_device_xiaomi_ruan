@@ -103,7 +103,7 @@ TARGET_KERNEL_CONFIG := \
 
 # Prebuilt DTB/DTBO (no upstream kernel source for dizi)
 BOARD_PREBUILT_DTBIMAGE_DIR := device/xiaomi/dizi/dtb
-BOARD_PREBUILT_DTBOIMAGE := device/xiaomi/dizi/dtbo/dtbo.img
+BOARD_PREBUILT_DTBOIMAGE := out/dtbo_prebuilt/dtbo.img
 TARGET_BOARD_INFO_FILE := device/xiaomi/dizi/board-info.txt
 
 BOARD_BOOT_HEADER_VERSION := 4

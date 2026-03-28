@@ -14,7 +14,7 @@ filegroup {
 
 genrule {
     name: "qcril_config_database",
-    enabled: true,
+    enabled: false,
     srcs: [
         "//vendor/xiaomi/dizi:proprietary_rildb_other_sql_files",
         "//vendor/xiaomi/dizi:proprietary_rildb_config_sql_files",
@@ -29,6 +29,7 @@ genrule {
 
 prebuilt_etc {
     name: "qcrilNrDb_vendor",
+    enabled: false,
     filename: "qcrilNr.db",
     src: ":qcril_config_database",
     relative_install_path: "qcril_database",
