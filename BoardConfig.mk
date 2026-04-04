@@ -5,6 +5,7 @@
 #
 
 DEVICE_PATH := device/xiaomi/dizi
+KERNEL_PATH := $(DEVICE_PATH)-kernel
 
 BUILD_BROKEN_DUP_RULES := true
 
@@ -85,25 +86,33 @@ $(foreach sku, CN GL JP, \
 DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/framework_manifest.xml
 
 # Kernel
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-BOARD_RAMDISK_USE_LZ4 := true
-TARGET_NEEDS_DTBOIMAGE := true
+# TARGET_KERNEL_ADDITIONAL_FLAGS := TARGET_PRODUCT=dizi
+# TARGET_KERNEL_SOURCE := kernel/xiaomi/sm7435
+# TARGET_KERNEL_CONFIG := \
+#   gki_defconfig \
+#    vendor/parrot_GKI.config \
+#    vendor/dizi_GKI.config \
+#    vendor/debugfs.config
 
-BOARD_KERNEL_BASE := 0x00000000
-BOARD_KERNEL_PAGESIZE := 4096
-BOARD_KERNEL_IMAGE_NAME := Image
+BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(KERNEL_PATH)/modules/vendor_dlkm/modules.blocklist
+BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules/vendor_dlkm/modules.load))
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(KERNEL_PATH)/modules/vendor_ramdisk/modules.blocklist
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules/vendor_ramdisk/modules.load))
+BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules/vendor_ramdisk/modules.load.recovery))
 
-TARGET_KERNEL_ADDITIONAL_FLAGS := TARGET_PRODUCT=dizi
-TARGET_KERNEL_SOURCE := kernel/xiaomi/sm7435
-TARGET_KERNEL_CONFIG := \
-    gki_defconfig \
-    vendor/parrot_GKI.config \
-    vendor/dizi_GKI.config \
-    vendor/debugfs.config
+# Kernel prebuilt
+BOARD_USES_DT := true
+BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtbs
+BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
+TARGET_FORCE_PREBUILT_KERNEL := true
+TARGET_KERNEL_SOURCE := $(KERNEL_PATH)/kernel-headers
+TARGET_NO_KERNEL_OVERRIDE := true
+TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/kernel
+PRODUCT_COPY_FILES += $(TARGET_PREBUILT_KERNEL):kernel
 
 # Prebuilt DTB/DTBO (no upstream kernel source for dizi)
-BOARD_PREBUILT_DTBIMAGE_DIR := device/xiaomi/dizi/dtb
-BOARD_PREBUILT_DTBOIMAGE := out/dtbo_prebuilt/dtbo.img
+# BOARD_PREBUILT_DTBIMAGE_DIR := device/xiaomi/dizi/dtb
+# BOARD_PREBUILT_DTBOIMAGE := out/dtbo_prebuilt/dtbo.img
 TARGET_BOARD_INFO_FILE := device/xiaomi/dizi/board-info.txt
 
 BOARD_BOOT_HEADER_VERSION := 4
@@ -143,19 +152,12 @@ TARGET_KERNEL_EXT_MODULES := \
 	qcom/opensource/video-driver \
 	qcom/opensource/wlan/qcacld-3.0/.qca6750
 
-BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(DEVICE_PATH)/modules/dlkm/modules.blocklist
-BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules/dlkm/modules.load))
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_BLOCKLIST_FILE := $(DEVICE_PATH)/modules/ramdisk/modules.blocklist
-BOARD_VENDOR_RAMDISK_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules/ramdisk/modules.load))
-BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(DEVICE_PATH)/modules/ramdisk/modules.load.recovery))
-BOOT_KERNEL_MODULES := $(BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD)
-
 # Partitions
 -include vendor/lineage/config/BoardConfigReservedSize.mk
 
-BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296    # 131072 KB = boot_a from partition_ext.xml
 BOARD_DTBOIMG_PARTITION_SIZE := 25165824        # 24576 KB = dtbo_a from partition_ext.xml
-BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600 # 100MB
+BOARD_BOOTIMAGE_PARTITION_SIZE := 100663296   
+BOARD_DTBOIMG_PARTITION_SIZE := 24117248   
 BOARD_SUPER_PARTITION_SIZE := 9126805504        # 8912896 KB from partition_ext.xml
 BOARD_VENDOR_BOOTIMAGE_PARTITION_SIZE := 100663296 # 96MB
 
