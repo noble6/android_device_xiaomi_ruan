@@ -7,7 +7,7 @@ bluetooth.device.default_name=Redmi Pad Pro
 # Device
 ro.product.odm.brand=Redmi
 ro.product.odm.model=23117RK66G
-ro.product.odm.name=dizi_eea
+ro.product.odm.name=ruan_global
 
 # USB
 vendor.usb.product_string=Redmi Pad Pro
