@@ -16,8 +16,8 @@ genrule {
     name: "qcril_config_database",
     enabled: false,
     srcs: [
-        "//vendor/xiaomi/dizi:proprietary_rildb_other_sql_files",
-        "//vendor/xiaomi/dizi:proprietary_rildb_config_sql_files",
+        "//vendor/xiaomi/ruan:proprietary_rildb_other_sql_files",
+        "//vendor/xiaomi/ruan:proprietary_rildb_config_sql_files",
         ":rildb_config_sql_files",
     ],
     tools: [

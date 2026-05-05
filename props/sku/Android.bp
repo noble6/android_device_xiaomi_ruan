@@ -1,7 +1,7 @@
 prebuilt_etc {
-    name: "dizi_sku_properties",
+    name: "ruan_sku_properties",
     srcs: [
-        "EEA_dizi_build.prop",
+        "EEA_ruan_build.prop",
     ],
     device_specific: true,
 }

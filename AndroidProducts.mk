@@ -5,4 +5,4 @@
 #
 
 PRODUCT_MAKEFILES := \
-    $(LOCAL_DIR)/lineage_dizi.mk
+    $(LOCAL_DIR)/lineage_ruan.mk

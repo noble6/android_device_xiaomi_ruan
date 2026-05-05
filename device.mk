@@ -68,7 +68,7 @@ PRODUCT_PACKAGES += \
     libqcomvoiceprocessing \
     libsndcardparser \
     libvolumelistener
-# NOTE: libfmpal excluded — dizi (Redmi Pad Pro / POCO Pad) is a tablet with no FM radio hardware
+# NOTE: libfmpal excluded — ruan (Redmi Pad Pro / POCO Pad) is a tablet with no FM radio hardware
 
 AUDIO_HAL_DIR := hardware/qcom-caf/sm8450/audio/primary-hal
 
@@ -185,7 +185,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     charger_fw_fstab.qti \
     fstab.qcom \
-    init.dizi.rc \
+    init.ruan.rc \
     init.qcom.rc \
     init.recovery.qcom.rc \
     init.target.rc \
@@ -202,7 +202,7 @@ PRODUCT_PACKAGES += \
     IPACM_Filter_cfg.xml
 
 # IR
-# NOTE: dizi is a tablet with no IR blaster hardware — IR section removed
+# NOTE: ruan is a tablet with no IR blaster hardware — IR section removed
 
 # Keylayout
 PRODUCT_COPY_FILES += \
@@ -237,27 +237,27 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.software.ipsec_tunnels.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.software.ipsec_tunnels.xml
 
 # NFC
-# TODO: dizi EEA is a tablet — NFC presence not confirmed from vendor blobs inspection.
+# TODO: ruan EEA is a tablet — NFC presence not confirmed from vendor blobs inspection.
 #       The garnet (phone) had NFC on CN/GL/JP SKUs. Enable this block only after
-#       confirming NFC HAL blobs exist in vendor/xiaomi/dizi.
+#       confirming NFC HAL blobs exist in vendor/xiaomi/ruan.
 # PRODUCT_PACKAGES += \
 #     android.hardware.nfc-service.nxp \
 #     com.android.nfc_extras
 
 # Overlay
 PRODUCT_PACKAGES += \
-    ApertureOverlayDizi \
-    CarrierConfigOverlayDizi \
-    FrameworkOverlayDizi \
-    LineageSDKOverlayDizi \
-    LineageSettingsOverlayDizi \
-    LineageSystemUIOverlayDizi \
-    SettingsOverlayDizi \
-    SettingsProviderOverlayDizi \
-    SettingsProviderOverlayDiziEEA \
-    SystemUIOverlayDizi \
-    TelephonyOverlayDizi \
-    WifiOverlayDizi
+    ApertureOverlayRuan \
+    CarrierConfigOverlayRuan \
+    FrameworkOverlayRuan \
+    LineageSDKOverlayRuan \
+    LineageSettingsOverlayRuan \
+    LineageSystemUIOverlayRuan \
+    SettingsOverlayRuan \
+    SettingsProviderOverlayRuan \
+    SettingsProviderOverlayRuanEEA \
+    SystemUIOverlayRuan \
+    TelephonyOverlayRuan \
+    WifiOverlayRuan
 
 PRODUCT_PACKAGES += \
     NcmTetheringOverlay
@@ -279,7 +279,7 @@ PRODUCT_COPY_FILES += \
 
 # Properties
 PRODUCT_PACKAGES += \
-    dizi_sku_properties
+    ruan_sku_properties
 
 # QMI
 PRODUCT_PACKAGES += \
@@ -339,7 +339,7 @@ PRODUCT_BOOT_JARS += \
     telephony-ext \
     xiaomi-telephony-stub
 
-$(foreach sku, dizi, \
+$(foreach sku, ruan, \
     $(eval PRODUCT_COPY_FILES += \
         frameworks/native/data/etc/android.hardware.telephony.euicc.xml:$(TARGET_COPY_OUT_PRODUCT)/etc/permissions/sku_$(sku)/android.hardware.telephony.euicc.xml))
 
@@ -430,4 +430,4 @@ PRODUCT_COPY_FILES += \
     frameworks/native/data/etc/android.hardware.wifi.xml:$(TARGET_COPY_OUT_VENDOR)/etc/permissions/android.hardware.wifi.xml
 
 # Vendor
-$(call inherit-product, vendor/xiaomi/dizi/dizi-vendor.mk)
+$(call inherit-product, vendor/xiaomi/ruan/ruan-vendor.mk)

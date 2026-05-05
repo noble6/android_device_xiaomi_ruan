@@ -4,7 +4,7 @@
 # SPDX-License-Identifier: Apache-2.0
 #
 
-DEVICE_PATH := device/xiaomi/dizi
+DEVICE_PATH := device/xiaomi/ruan
 KERNEL_PATH := $(DEVICE_PATH)-kernel
 
 BUILD_BROKEN_DUP_RULES := true
@@ -30,14 +30,14 @@ TARGET_ARCH_VARIANT := armv8-a-branchprot
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := generic
-TARGET_CPU_VARIANT_RUNTIME := kryo300
+TARGET_CPU_VARIANT_RUNTIME := cortex-a78
 
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-2a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
-TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a75
+TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
 
 # Audio
 AUDIO_FEATURE_ENABLED_DLKM := true
@@ -86,12 +86,12 @@ $(foreach sku, CN GL JP, \
 DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/framework_manifest.xml
 
 # Kernel
-# TARGET_KERNEL_ADDITIONAL_FLAGS := TARGET_PRODUCT=dizi
+# TARGET_KERNEL_ADDITIONAL_FLAGS := TARGET_PRODUCT=ruan
 # TARGET_KERNEL_SOURCE := kernel/xiaomi/sm7435
 # TARGET_KERNEL_CONFIG := \
 #   gki_defconfig \
 #    vendor/parrot_GKI.config \
-#    vendor/dizi_GKI.config \
+#    vendor/ruan_GKI.config \
 #    vendor/debugfs.config
 
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(KERNEL_PATH)/modules/vendor_dlkm/modules.blocklist
@@ -110,10 +110,10 @@ TARGET_NO_KERNEL_OVERRIDE := true
 TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/kernel
 PRODUCT_COPY_FILES += $(TARGET_PREBUILT_KERNEL):kernel
 
-# Prebuilt DTB/DTBO (no upstream kernel source for dizi)
-# BOARD_PREBUILT_DTBIMAGE_DIR := device/xiaomi/dizi/dtb
+# Prebuilt DTB/DTBO (no upstream kernel source for ruan)
+# BOARD_PREBUILT_DTBIMAGE_DIR := device/xiaomi/ruan/dtb
 # BOARD_PREBUILT_DTBOIMAGE := out/dtbo_prebuilt/dtbo.img
-TARGET_BOARD_INFO_FILE := device/xiaomi/dizi/board-info.txt
+TARGET_BOARD_INFO_FILE := device/xiaomi/ruan/board-info.txt
 
 BOARD_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOT_HEADER_VERSION)
@@ -244,4 +244,4 @@ WIFI_HIDL_UNIFIED_SUPPLICANT_SERVICE_RC_ENTRY := true
 WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Vendor
-include vendor/xiaomi/dizi/BoardConfigVendor.mk
+include vendor/xiaomi/ruan/BoardConfigVendor.mk
