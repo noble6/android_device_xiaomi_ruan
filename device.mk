@@ -215,7 +215,6 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     vendor.lineage.health-service.default
 
-$(call soong_config_set_bool,lineage_health,charging_control_supports_bypass,false)
 
 # Media
 PRODUCT_COPY_FILES += \
@@ -394,7 +393,6 @@ PRODUCT_COPY_FILES += \
 
 # Vibrator
 $(call soong_config_set,qti_vibrator,effect_lib,libqtivibratoreffect.xiaomi)
-$(call soong_config_set_bool,qti_vibrator,use_effect_stream,true)
 
 PRODUCT_PACKAGES += \
     vendor.qti.hardware.vibrator.service
@@ -435,3 +433,13 @@ $(call inherit-product, vendor/xiaomi/ruan/ruan-vendor.mk)
 SOONG_CONFIG_NAMESPACES += android_hardware_audio
 SOONG_CONFIG_android_hardware_audio += skip_speaker_layout_channel_mask_field
 SOONG_CONFIG_android_hardware_audio_skip_speaker_layout_channel_mask_field := true
+
+# Lineage health soong config
+SOONG_CONFIG_NAMESPACES += lineage_health
+SOONG_CONFIG_lineage_health += charging_control_supports_bypass
+SOONG_CONFIG_lineage_health_charging_control_supports_bypass := false
+
+# QTI vibrator soong config
+SOONG_CONFIG_NAMESPACES += qti_vibrator
+SOONG_CONFIG_qti_vibrator += use_effect_stream
+SOONG_CONFIG_qti_vibrator_use_effect_stream := true
