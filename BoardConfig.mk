@@ -251,3 +251,7 @@ include vendor/xiaomi/ruan/BoardConfigVendor.mk
 
 # Kernel headers
 TARGET_PREBUILT_KERNEL_HEADERS := device/xiaomi/ruan-kernel/kernel-headers
+
+# No separate recovery - uses AB/virtual AB
+BOARD_USES_RECOVERY_AS_BOOT := false
+BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
