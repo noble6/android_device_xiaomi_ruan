@@ -246,3 +246,6 @@ WPA_SUPPLICANT_VERSION := VER_0_8_X
 
 # Vendor
 include vendor/xiaomi/ruan/BoardConfigVendor.mk
+
+# Kernel headers
+BOARD_KERNEL_HEADER_DIRS += device/xiaomi/ruan-kernel/kernel-headers
