@@ -1,7 +1,7 @@
 prebuilt_etc {
     name: "ruan_sku_properties",
     srcs: [
-        "EEA_ruan_build.prop",
+        "Global_ruan_build.prop",
     ],
     device_specific: true,
 }
