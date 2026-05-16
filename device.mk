@@ -39,7 +39,6 @@ PRODUCT_SHIPPING_API_LEVEL := $(BOARD_SHIPPING_API_LEVEL)
 
 # Audio
 $(call soong_config_set, android_hardware_audio, run_64bit, true)
-$(call soong_config_set_bool, android_hardware_audio, skip_speaker_layout_channel_mask_field, true)
 
 PRODUCT_PACKAGES += \
     android.hardware.audio@7.0-impl \
@@ -431,3 +430,8 @@ PRODUCT_COPY_FILES += \
 
 # Vendor
 $(call inherit-product, vendor/xiaomi/ruan/ruan-vendor.mk)
+
+# Audio soong config
+SOONG_CONFIG_NAMESPACES += android_hardware_audio
+SOONG_CONFIG_android_hardware_audio += skip_speaker_layout_channel_mask_field
+SOONG_CONFIG_android_hardware_audio_skip_speaker_layout_channel_mask_field := true
