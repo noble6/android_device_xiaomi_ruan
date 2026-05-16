@@ -103,6 +103,7 @@ BOARD_VENDOR_RAMDISK_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNE
 # Kernel prebuilt
 BOARD_USES_DT := true
 BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtbs
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
 TARGET_FORCE_PREBUILT_KERNEL := true
 TARGET_KERNEL_SOURCE := $(KERNEL_PATH)/kernel-headers
@@ -112,6 +113,7 @@ PRODUCT_COPY_FILES += $(TARGET_PREBUILT_KERNEL):kernel
 
 # Prebuilt DTB/DTBO (no upstream kernel source for ruan)
 # BOARD_PREBUILT_DTBIMAGE_DIR := device/xiaomi/ruan/dtb
+BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 # BOARD_PREBUILT_DTBOIMAGE := out/dtbo_prebuilt/dtbo.img
 TARGET_BOARD_INFO_FILE := device/xiaomi/ruan/board-info.txt
 
