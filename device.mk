@@ -443,3 +443,13 @@ SOONG_CONFIG_lineage_health_charging_control_supports_bypass := false
 SOONG_CONFIG_NAMESPACES += qti_vibrator
 SOONG_CONFIG_qti_vibrator += use_effect_stream
 SOONG_CONFIG_qti_vibrator_use_effect_stream := true
+
+# Lineage health soong config
+SOONG_CONFIG_NAMESPACES += lineage_health
+SOONG_CONFIG_lineage_health += charging_control_supports_bypass
+SOONG_CONFIG_lineage_health_charging_control_supports_bypass := false
+
+# QTI vibrator soong config
+SOONG_CONFIG_NAMESPACES += qti_vibrator
+SOONG_CONFIG_qti_vibrator += use_effect_stream
+SOONG_CONFIG_qti_vibrator_use_effect_stream := true
