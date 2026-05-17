@@ -453,3 +453,8 @@ SOONG_CONFIG_lineage_health_charging_control_supports_bypass := false
 SOONG_CONFIG_NAMESPACES += qti_vibrator
 SOONG_CONFIG_qti_vibrator += use_effect_stream
 SOONG_CONFIG_qti_vibrator_use_effect_stream := true
+
+# Recovery init RC — root (first-stage init) + system/etc/init (second-stage)
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/rootdir/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
+    $(LOCAL_PATH)/rootdir/etc/init/init.recovery.qcom.rc:system/etc/init/init.recovery.qcom.rc
