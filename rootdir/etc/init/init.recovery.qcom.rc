@@ -8,9 +8,3 @@ on init
 on fs
     wait /dev/block/platform/soc/1d84000.ufshc
     symlink /dev/block/platform/soc/1d84000.ufshc /dev/block/bootdevice
-
-on property:ro.crypto.state=encrypted && property:ro.crypto.type=file
-    install_key_timeout 120
-
-on property:twrp.all.users.decrypted=true
-    setprop security.perf_harden 0
