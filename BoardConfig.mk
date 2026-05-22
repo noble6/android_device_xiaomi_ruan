@@ -191,7 +191,6 @@ TARGET_BOARD_PLATFORM := parrot
 # Recovery
 TARGET_RECOVERY_FSTAB := $(DEVICE_PATH)/rootdir/etc/fstab.qcom
 TARGET_RECOVERY_PIXEL_FORMAT := RGBX_8888
-TARGET_USERIMAGES_USE_F2FS := true
 
 # RIL
 ENABLE_VENDOR_RIL_SERVICE := true
@@ -253,4 +252,8 @@ include vendor/xiaomi/ruan/BoardConfigVendor.mk
 TARGET_PREBUILT_KERNEL_HEADERS := device/xiaomi/ruan-kernel/kernel-headers
 
 # No separate recovery - uses AB/virtual AB
-BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
+# BOARD_MOVE_RECOVERY_RESOURCES_TO_VENDOR_BOOT := true
+
+# Recovery — separate partition
+BOARD_USES_RECOVERY_AS_BOOT := false
+BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
