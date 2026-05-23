@@ -213,7 +213,7 @@ VENDOR_SECURITY_PATCH := 2025-12-01
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 2
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
 
 BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
@@ -257,3 +257,10 @@ TARGET_PREBUILT_KERNEL_HEADERS := device/xiaomi/ruan-kernel/kernel-headers
 # Recovery — separate partition
 BOARD_USES_RECOVERY_AS_BOOT := false
 BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
+
+# Disable AVB enforcement on recovery for custom recovery support
+BOARD_AVB_RECOVERY_ADD_HASH_FOOTER_ARGS += --prop com.android.build.recovery.fingerprint:$(BUILD_FINGERPRINT_FROM_FILE)
+
+# Recovery uses v2 header, not v4 (GKI boot header)
+BOARD_RECOVERY_HEADER_VERSION := 2
+BOARD_MKRECOVERYIMG_ARGS := --header_version $(BOARD_RECOVERY_HEADER_VERSION)
