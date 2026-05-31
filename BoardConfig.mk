@@ -15,8 +15,7 @@ AB_OTA_PARTITIONS := \
     vendor_boot \
     recovery \
     dtbo \
-    vbmeta \
-    vbmeta_system \
+
     system \
     system_ext \
     product \
@@ -125,13 +124,15 @@ BOARD_KERNEL_CMDLINE := \
     video=vfb:640x400,bpp=32,memsize=3072000 \
     disable_dma32=on \
     bootinfo.fingerprint=$(LINEAGE_VERSION) \
-    swinfo.fingerprint=$(LINEAGE_VERSION)
+    swinfo.fingerprint=$(LINEAGE_VERSION) \
+    androidboot.selinux=permissive
 
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3 \
-    androidboot.force_normal_boot=1
+    androidboot.force_normal_boot=1 \
+    androidboot.selinux=permissive
 
 # Kernel modules
 TARGET_KERNEL_EXT_MODULE_ROOT := kernel/xiaomi/sm7435-modules
@@ -213,7 +214,7 @@ VENDOR_SECURITY_PATCH := 2025-12-01
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
-BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 2
+BOARD_AVB_MAKE_VBMETA_IMAGE_ARGS += --flags 3
 BOARD_MOVE_GSI_AVB_KEYS_TO_VENDOR_BOOT := true
 
 BOARD_AVB_RECOVERY_KEY_PATH := external/avb/test/data/testkey_rsa4096.pem
