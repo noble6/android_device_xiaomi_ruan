@@ -463,3 +463,8 @@ PRODUCT_COPY_FILES += \
 # Recovery virtualkeys
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/recovery/root/sys/board_properties/virtualkeys.NVTCapacitiveTouchScreen:recovery/root/sys/board_properties/virtualkeys.NVTCapacitiveTouchScreen
+
+# NVT touch firmware
+PRODUCT_COPY_FILES += \
+    vendor/xiaomi/ruan/vendor/firmware/novatek_ts_fw_boe.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/novatek_ts_fw_boe.bin \
+    vendor/xiaomi/ruan/vendor/firmware/novatek_ts_fw_csot.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/novatek_ts_fw_csot.bin
