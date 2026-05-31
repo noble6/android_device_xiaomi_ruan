@@ -459,3 +459,7 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
     $(LOCAL_PATH)/rootdir/init.recovery.hardware.rc:root/init.recovery.hardware.rc \
     $(LOCAL_PATH)/rootdir/etc/init/init.recovery.qcom.rc:system/etc/init/init.recovery.qcom.rc
+
+# Recovery virtualkeys
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/recovery/root/sys/board_properties/virtualkeys.NVTCapacitiveTouchScreen:recovery/root/sys/board_properties/virtualkeys.NVTCapacitiveTouchScreen
