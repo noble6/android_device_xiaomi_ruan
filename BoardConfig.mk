@@ -12,31 +12,31 @@ BUILD_BROKEN_DUP_RULES := true
 # A/B
 AB_OTA_PARTITIONS := \
     boot \
+    vendor_boot \
+    recovery \
     dtbo \
-    odm \
-    product \
-    system \
-    system_ext \
     vbmeta \
     vbmeta_system \
+    system \
+    system_ext \
+    product \
     vendor \
-    vendor_boot \
-    vendor_dlkm
-
-# Architecture
+    vendor_dlkm \
+    odm
+#Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a-branchprot
 TARGET_CPU_ABI := arm64-v8a
 TARGET_CPU_ABI2 :=
 TARGET_CPU_VARIANT := generic
 TARGET_CPU_VARIANT_RUNTIME := cortex-a78
-
 TARGET_2ND_ARCH := arm
 TARGET_2ND_ARCH_VARIANT := armv8-2a
 TARGET_2ND_CPU_ABI := armeabi-v7a
 TARGET_2ND_CPU_ABI2 := armeabi
 TARGET_2ND_CPU_VARIANT := generic
 TARGET_2ND_CPU_VARIANT_RUNTIME := cortex-a55
+
 
 # Audio
 AUDIO_FEATURE_ENABLED_DLKM := true
@@ -262,5 +262,6 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
 BOARD_AVB_RECOVERY_ADD_HASH_FOOTER_ARGS += --prop com.android.build.recovery.fingerprint:$(BUILD_FINGERPRINT_FROM_FILE)
 
 # Recovery uses v2 header, not v4 (GKI boot header)
-BOARD_RECOVERY_HEADER_VERSION := 2
+BOARD_RECOVERY_HEADER_VERSION := 4
 BOARD_MKRECOVERYIMG_ARGS := --header_version $(BOARD_RECOVERY_HEADER_VERSION)
+BOARD_RAMDISK_USE_LZ4 := true

@@ -2,7 +2,7 @@
 # ruan Device Tree Setup Script
 # Run this after repo sync, before building
 
-ANDROID_ROOT="$(pwd)/../../.."
+ANDROID_ROOT="$(pwd)"
 DEVICE_PATH="device/xiaomi/ruan"
 GEN="out/soong/.intermediates/vendor/lineage/build/soong/generated_kernel_includes/gen/usr/include"
 

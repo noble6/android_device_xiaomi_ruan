@@ -187,6 +187,7 @@ PRODUCT_PACKAGES += \
     init.ruan.rc \
     init.qcom.rc \
     init.recovery.qcom.rc \
+    init.recovery.hardware.rc \
     init.target.rc \
     ueventd-odm.rc \
     ueventd.qcom.rc
@@ -457,4 +458,5 @@ SOONG_CONFIG_qti_vibrator_use_effect_stream := true
 # Recovery init RC — root (first-stage init) + system/etc/init (second-stage)
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/init.recovery.qcom.rc:root/init.recovery.qcom.rc \
+    $(LOCAL_PATH)/rootdir/init.recovery.hardware.rc:root/init.recovery.hardware.rc \
     $(LOCAL_PATH)/rootdir/etc/init/init.recovery.qcom.rc:system/etc/init/init.recovery.qcom.rc
