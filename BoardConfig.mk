@@ -15,13 +15,13 @@ AB_OTA_PARTITIONS := \
     vendor_boot \
     recovery \
     dtbo \
-
     system \
     system_ext \
     product \
     vendor \
     vendor_dlkm \
     odm
+
 #Architecture
 TARGET_ARCH := arm64
 TARGET_ARCH_VARIANT := armv8-a-branchprot
