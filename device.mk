@@ -187,7 +187,6 @@ PRODUCT_PACKAGES += \
     init.ruan.rc \
     init.qcom.rc \
     init.recovery.qcom.rc \
-    init.recovery.hardware.rc \
     init.target.rc \
     ueventd-odm.rc \
     ueventd.qcom.rc
