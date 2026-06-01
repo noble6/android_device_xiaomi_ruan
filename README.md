@@ -65,7 +65,7 @@ mka bacon
 
 ## Key Differences vs Garnet (base device)
 
-| Feature | Garnet | Dizi |
+| Feature | Garnet | Ruan |
 |---|---|---|
 | WiFi/BT | WCN3990 (Adrastea) | WCN6750 (QCA6750) |
 | Cameras | 4 sensors | 3 sensors (GC08A3, OV08D10, OV13B10) |
