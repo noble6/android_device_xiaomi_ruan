@@ -82,7 +82,7 @@ mka bacon
 2. Reboot to recovery: `fastboot reboot recovery`
 3. Factory Reset → Format Data (type "yes") — **REQUIRED**
 4. Apply Update → ADB Sideload
-5. `adb sideload lineage-23.0-*-dizi.zip`
+5. `adb sideload lineage-23.0-*-ruan.zip`
 
 > If stuck at metadata: `fastboot erase metadata` then reboot recovery.
 
