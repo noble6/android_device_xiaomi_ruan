@@ -92,7 +92,7 @@ mka bacon
 ## Credits
 
 - [garnet-random](https://github.com/garnet-random) — kernel source and base device tree (Redmi Note 13 Pro)
-- [MORf30] (https://github.com/M0Rf30)
+- [M0Rf30] (https://github.com/M0Rf30)
 - for the initial-tree and hardware references
 - [LineageOS](https://github.com/LineageOS) — Android base
 - Ported to dizi/ruan by [nobleactual17](https://github.com/nobleactual17)
