@@ -2,6 +2,7 @@
 
 > **Status:** Work in Progress — Unofficial
               Recovery boots by live booting for now
+              Rom - Bootloops (tbh idk why)
 
 ---
 
