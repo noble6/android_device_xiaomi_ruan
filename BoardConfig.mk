@@ -270,3 +270,10 @@ BOARD_RAMDISK_USE_LZ4 := true
 # Recovery touch
 TARGET_RECOVERY_UI_MARGIN_HEIGHT := 0
 TARGET_RECOVERY_UI_TOUCH_HIGH_DENSITY := true
+
+# OS version spoof for Snapdragon bootloader compatibility
+BOARD_MKBOOTIMG_ARGS += --os_version 12.0.0 --os_patch_level 2025-02
+BOARD_MKRECOVERYIMG_ARGS += --os_version 12.0.0 --os_patch_level 2025-02
+
+# Strip kernel from recovery (stock recovery is ramdisk-only)
+BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
