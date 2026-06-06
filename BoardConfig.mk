@@ -277,3 +277,7 @@ BOARD_MKRECOVERYIMG_ARGS += --os_version 12.0.0 --os_patch_level 2025-02
 
 # Strip kernel from recovery (stock recovery is ramdisk-only)
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
+
+# Kernel modules path
+BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(wildcard $(KERNEL_PATH)/modules/vendor_ramdisk/*.ko)
+BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(KERNEL_PATH)/modules/vendor_dlkm/*.ko)
