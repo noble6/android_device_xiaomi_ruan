@@ -476,3 +476,8 @@ PRODUCT_COPY_FILES += \
     test/vts-testcase/security/avb/data/q-gsi.avbpubkey:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/avb/q-gsi.avbpubkey \
     test/vts-testcase/security/avb/data/r-gsi.avbpubkey:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/avb/r-gsi.avbpubkey \
     test/vts-testcase/security/avb/data/s-gsi.avbpubkey:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/avb/s-gsi.avbpubkey
+
+# Virtual AB / Dynamic partitions - snapuserd required
+PRODUCT_PACKAGES += \
+    snapuserd \
+    snapuserd_ramdisk
