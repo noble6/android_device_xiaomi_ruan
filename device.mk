@@ -193,7 +193,8 @@ PRODUCT_PACKAGES += \
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.qcom \
-    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.default
+    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.default \
+    $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/first_stage_ramdisk/fstab.emmc
 
 # IPACM
 PRODUCT_PACKAGES += \
@@ -469,3 +470,9 @@ PRODUCT_COPY_FILES += \
 PRODUCT_COPY_FILES += \
     vendor/xiaomi/ruan/vendor/firmware/novatek_ts_fw_boe.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/novatek_ts_fw_boe.bin \
     vendor/xiaomi/ruan/vendor/firmware/novatek_ts_fw_csot.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/novatek_ts_fw_csot.bin
+
+# GSI AVB keys for first stage mount
+PRODUCT_COPY_FILES += \
+    test/vts-testcase/security/avb/data/q-gsi.avbpubkey:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/avb/q-gsi.avbpubkey \
+    test/vts-testcase/security/avb/data/r-gsi.avbpubkey:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/avb/r-gsi.avbpubkey \
+    test/vts-testcase/security/avb/data/s-gsi.avbpubkey:$(TARGET_COPY_OUT_VENDOR_RAMDISK)/avb/s-gsi.avbpubkey
