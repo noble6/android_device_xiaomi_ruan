@@ -24,6 +24,6 @@ on fs
     mkdir /vendor/firmware
     mount_all /vendor/etc/charger_fstab.qti --early
     mount none /vendor/firmware_mnt/image /vendor/firmware bind rec
-    wait /sys/kernel/boot_adsp/boot
-    write /sys/kernel/boot_adsp/boot 1
-    wait /sys/class/power_supply/battery
+    #wait /sys/kernel/boot_adsp/boot
+    #write /sys/kernel/boot_adsp/boot 1
+    #wait /sys/class/power_supply/battery
