@@ -481,3 +481,8 @@ PRODUCT_COPY_FILES += \
 PRODUCT_PACKAGES += \
     snapuserd \
     snapuserd_ramdisk
+
+# NVT touch firmware - ODM path
+PRODUCT_COPY_FILES += \
+    vendor/xiaomi/ruan/vendor/firmware/novatek_ts_fw_boe.bin:$(TARGET_COPY_OUT_ODM)/firmware/novatek_ts_fw_boe.bin \
+    vendor/xiaomi/ruan/vendor/firmware/novatek_ts_fw_csot.bin:$(TARGET_COPY_OUT_ODM)/firmware/novatek_ts_fw_csot.bin
