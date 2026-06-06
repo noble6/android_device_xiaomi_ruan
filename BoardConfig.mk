@@ -125,14 +125,11 @@ BOARD_KERNEL_CMDLINE := \
     disable_dma32=on \
     bootinfo.fingerprint=$(LINEAGE_VERSION) \
     swinfo.fingerprint=$(LINEAGE_VERSION) \
-    androidboot.selinux=permissive
 
 BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3 \
-    androidboot.force_normal_boot=1 \
-    androidboot.selinux=permissive
 
 # Kernel modules
 TARGET_KERNEL_EXT_MODULE_ROOT := kernel/xiaomi/sm7435-modules
