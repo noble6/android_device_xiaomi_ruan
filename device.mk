@@ -485,3 +485,12 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     vendor/xiaomi/ruan/vendor/firmware/novatek_ts_fw_boe.bin:$(TARGET_COPY_OUT_ODM)/firmware/novatek_ts_fw_boe.bin \
     vendor/xiaomi/ruan/vendor/firmware/novatek_ts_fw_csot.bin:$(TARGET_COPY_OUT_ODM)/firmware/novatek_ts_fw_csot.bin
+
+# Fstab
+PRODUCT_PACKAGES += \
+    fstab.qcom \
+    fstab.qcom.ramdisk
+
+# OTA
+PRODUCT_PACKAGES += \
+    update_engine_sideload
