@@ -494,3 +494,8 @@ PRODUCT_PACKAGES += \
 # OTA
 PRODUCT_PACKAGES += \
     update_engine_sideload
+
+# Brute-force fstab into recovery to fix Mi logo hang
+PRODUCT_COPY_FILES += \
+    device/xiaomi/ruan/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.qcom \
+    device/xiaomi/ruan/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RECOVERY)/root/fstab.qcom
