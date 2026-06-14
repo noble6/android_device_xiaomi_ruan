@@ -130,7 +130,6 @@ BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3 \
-    androidboot.fstab_suffix=qcom \
 
 # Kernel modules
 TARGET_KERNEL_EXT_MODULE_ROOT := kernel/xiaomi/sm7435-modules
