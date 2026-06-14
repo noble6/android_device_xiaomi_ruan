@@ -495,3 +495,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     update_engine_sideload
 
+
+# Dedicated stripped fstab for Recovery
+PRODUCT_COPY_FILES += \
+    device/xiaomi/ruan/rootdir/etc/fstab.recovery.qcom:$(TARGET_COPY_OUT_RECOVERY)/root/first_stage_ramdisk/fstab.qcom
