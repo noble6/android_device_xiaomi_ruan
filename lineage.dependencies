@@ -13,6 +13,6 @@
     "repository": "android_vendor_xiaomi_ruan",
     "remote": "noble6",
     "branch": "vendor",
-    "target_path": "vendor/xiaomi/dizi"
+    "target_path": "vendor/xiaomi/ruan"
   }
 ]
