@@ -20,7 +20,9 @@ AB_OTA_PARTITIONS := \
     product \
     vendor \
     vendor_dlkm \
-    odm
+    odm \
+    odm_dlkm \
+    mi_ext
 
 #Architecture
 TARGET_ARCH := arm64
@@ -130,6 +132,8 @@ BOARD_BOOTCONFIG := \
     androidboot.hardware=qcom \
     androidboot.memcg=1 \
     androidboot.usbcontroller=a600000.dwc3 \
+    androidboot.selinux=permissive \
+    androidboot.selinux=permissive \
 
 # Kernel modules
 TARGET_KERNEL_EXT_MODULE_ROOT := kernel/xiaomi/sm7435-modules
@@ -207,7 +211,7 @@ TARGET_SYSTEM_EXT_PROP += $(DEVICE_PATH)/props/system_ext.prop
 TARGET_VENDOR_PROP += $(DEVICE_PATH)/props/vendor.prop
 
 # Vendor security patch
-VENDOR_SECURITY_PATCH := 2025-12-01
+VENDOR_SECURITY_PATCH := 2025-09-01
 
 # Verified Boot
 BOARD_AVB_ENABLE := true
@@ -269,8 +273,8 @@ TARGET_RECOVERY_UI_MARGIN_HEIGHT := 0
 TARGET_RECOVERY_UI_TOUCH_HIGH_DENSITY := true
 
 # OS version spoof for Snapdragon bootloader compatibility
-BOARD_MKBOOTIMG_ARGS += --os_version 12.0.0 --os_patch_level 2025-02
-BOARD_MKRECOVERYIMG_ARGS += --os_version 12.0.0 --os_patch_level 2025-02
+BOARD_MKBOOTIMG_ARGS += --os_version 12.0.0 --os_patch_level 2025-09
+BOARD_MKRECOVERYIMG_ARGS += --os_version 12.0.0 --os_patch_level 2025-09
 
 # Strip kernel from recovery (stock recovery is ramdisk-only)
 BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
