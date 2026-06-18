@@ -21,7 +21,6 @@ AB_OTA_PARTITIONS := \
     vendor \
     vendor_dlkm \
     odm \
-    odm_dlkm \
    
 
 #Architecture
