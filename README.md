@@ -1,8 +1,7 @@
 # LineageOS 23.0 Device Tree — Xiaomi Redmi Pad Pro 5G / POCO Pad 5G (ruan)
 
 > **Status:** Work in Progress — Unofficial
-              Recovery boots by live booting for now
-              Rom - Bootloops (tbh idk why)
+              Recovery boot and rom doesn't
 
 ---
 
@@ -12,8 +11,7 @@
 |---|---|
 | Device | Xiaomi Redmi Pad Pro 5G/ POCO Pad pro 5G|
 | Codename | `dizi` (WiFi) / `ruan` (5G) |
-| SoC | Snapdragon 7s Gen 2 (SM7435P / Parrot) |
-| Architecture | ARM64 |
+| SoC | Snapdragon 7s Gen 2 (SM7435P / Parrot) || Architecture | ARM64 |
 | Display | 12.1" 1600×2560 @ 120Hz |
 | RAM | 6GB / 8GB / 12GB |
 | Storage | 128GB / 256GB / 512GB (UFS) |
