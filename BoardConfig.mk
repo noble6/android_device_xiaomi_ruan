@@ -112,10 +112,6 @@ TARGET_NO_KERNEL_OVERRIDE := true
 TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/kernel
 PRODUCT_COPY_FILES += $(TARGET_PREBUILT_KERNEL):kernel
 
-# Prebuilt DTB/DTBO (no upstream kernel source for ruan)
-# BOARD_PREBUILT_DTBIMAGE_DIR := device/xiaomi/ruan/dtb
-BOARD_INCLUDE_DTB_IN_BOOTIMG := true
-# BOARD_PREBUILT_DTBOIMAGE := out/dtbo_prebuilt/dtbo.img
 TARGET_BOARD_INFO_FILE := device/xiaomi/ruan/board-info.txt
 
 BOARD_BOOT_HEADER_VERSION := 4
