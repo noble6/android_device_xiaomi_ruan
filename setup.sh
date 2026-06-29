@@ -19,7 +19,7 @@ if [ ! -d "vendor/xiaomi/ruan" ]; then
     git clone -b vendor https://github.com/nobleactual17/DIZI-device-trees vendor/xiaomi/ruan
 fi
 if [ ! -d "device/xiaomi/ruan-kernel" ]; then
-    git clone -b main https://github.com/noble6/android_vendor_xiaomi_ruan device/xiaomi/ruan-kernel
+    git clone -b main https://github.com/noble6/android_vendor_xiaomi_kernel device/xiaomi/ruan-kernel
 fi
 
 # Step 2 - Fix libvmmem source
