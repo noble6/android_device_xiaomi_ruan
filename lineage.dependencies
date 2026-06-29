@@ -4,15 +4,15 @@
     "target_path": "hardware/xiaomi"
   },
   {
-    "repository": "android_vendor_xiaomi_ruan",
+    "repository": "android_vendor_xiaomi_kernel",
     "remote": "noble6",
     "branch": "main",
     "target_path": "device/xiaomi/ruan-kernel"
   },
   {
-    "repository": "android_vendor_xiaomi_ruan",
+    "repository": "android_device_xiaomi_prevendor",
     "remote": "noble6",
-    "branch": "vendor",
+    "branch": "main",
     "target_path": "vendor/xiaomi/ruan"
   }
 ]
