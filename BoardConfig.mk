@@ -21,6 +21,8 @@ AB_OTA_PARTITIONS := \
     vendor \
     vendor_dlkm \
     odm \
+    vbmeta \
+    vbmeta_system
    
 
 #Architecture
