@@ -474,11 +474,6 @@ PRODUCT_PACKAGES += \
     snapuserd \
     snapuserd_ramdisk
 
-# NVT touch firmware - ODM path
-PRODUCT_COPY_FILES += \
-    vendor/xiaomi/ruan/proprietary/vendor/firmware/novatek_ts_fw_boe.bin:$(TARGET_COPY_OUT_ODM)/firmware/novatek_ts_fw_boe.bin \
-    vendor/xiaomi/ruan/proprietary/vendor/firmware/novatek_ts_fw_csot.bin:$(TARGET_COPY_OUT_ODM)/firmware/novatek_ts_fw_csot.bin
-
 # Fstab
 PRODUCT_PACKAGES += \
     fstab.qcom \
@@ -488,12 +483,7 @@ PRODUCT_PACKAGES += \
 PRODUCT_PACKAGES += \
     update_engine_sideload
 
-
-PRODUCT_COPY_FILES += \
-
 # NVT touch MP firmware
 PRODUCT_COPY_FILES += \
     vendor/xiaomi/ruan/proprietary/vendor/firmware/novatek_ts_mp_boe.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/novatek_ts_mp_boe.bin \
-    vendor/xiaomi/ruan/proprietary/vendor/firmware/novatek_ts_mp_csot.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/novatek_ts_mp_csot.bin \
-    vendor/xiaomi/ruan/proprietary/vendor/firmware/novatek_ts_mp_boe.bin:$(TARGET_COPY_OUT_ODM)/firmware/novatek_ts_mp_boe.bin \
-    vendor/xiaomi/ruan/proprietary/vendor/firmware/novatek_ts_mp_csot.bin:$(TARGET_COPY_OUT_ODM)/firmware/novatek_ts_mp_csot.bin
+    vendor/xiaomi/ruan/proprietary/vendor/firmware/novatek_ts_mp_csot.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/novatek_ts_mp_csot.bin 
