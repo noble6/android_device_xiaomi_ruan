@@ -124,7 +124,7 @@ on post-fs-data
     chmod 0664 /sys/class/leds/led:flash_0/brightness
     chmod 0664 /sys/class/leds/led:flash_1/brightness
     chmod 0664 /sys/class/leds/led:flash_2/brightness
-    chmod 0664 /sys/class/leds/led:flash_3/brightnesssss
+    chmod 0664 /sys/class/leds/led:flash_3/brightness
     chmod 0664 /sys/class/leds/led:switch_0/brightness
     chmod 0664 /sys/class/leds/led:switch_1/brightness
     chmod 0664 /sys/class/leds/led:switch_2/brightness
