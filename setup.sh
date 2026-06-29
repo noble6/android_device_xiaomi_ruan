@@ -16,7 +16,7 @@ if [ ! -d "hardware/xiaomi" ]; then
     git clone https://github.com/LineageOS/android_hardware_xiaomi hardware/xiaomi
 fi
 if [ ! -d "vendor/xiaomi/ruan" ]; then
-    git clone -b vendor https://github.com/nobleactual17/DIZI-device-trees vendor/xiaomi/ruan
+    git clone https://github.com/noble6/android_device_xiaomi_prevendor vendor/xiaomi/ruan
 fi
 if [ ! -d "device/xiaomi/ruan-kernel" ]; then
     git clone -b main https://github.com/noble6/android_vendor_xiaomi_kernel device/xiaomi/ruan-kernel
