@@ -260,7 +260,7 @@ BOARD_RECOVERYIMAGE_PARTITION_SIZE := 104857600
 # Disable AVB enforcement on recovery for custom recovery support
 BOARD_AVB_RECOVERY_ADD_HASH_FOOTER_ARGS += --prop com.android.build.recovery.fingerprint:$(BUILD_FINGERPRINT_FROM_FILE)
 
-# Recovery uses v2 header, not v4 (GKI boot header)
+# Recovery uses v4 header, confirmed from stock ROM teardown (matches boot/vendor_boot)
 BOARD_RECOVERY_HEADER_VERSION := 4
 BOARD_MKRECOVERYIMG_ARGS := --header_version $(BOARD_RECOVERY_HEADER_VERSION)
 BOARD_RAMDISK_USE_LZ4 := true
@@ -281,8 +281,16 @@ BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(wildcard $(KERNEL_PATH)/modules/vendor_
 BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(KERNEL_PATH)/modules/vendor_dlkm/*.ko)
 
 # Recovery kernel modules (for touch and other drivers in standalone recovery)
+# NOTE: prebuilt blob wildcard below does NOT catch xiaomi_touch.ko / nt36532_spi.ko —
+# those are built from kernel/xiaomi/sm7435 source now, not the ruan-kernel blob repo.
+# TODO: after first build, find real output path for these two and add it here, e.g.:
+#   $(wildcard $(PRODUCT_OUT)/../obj/kernel/drivers/input/touchscreen/xiaomi/*.ko)
+#   $(wildcard $(PRODUCT_OUT)/../obj/kernel/drivers/input/touchscreen/nt36532_spi/*.ko)
 BOARD_RECOVERY_KERNEL_MODULES := $(wildcard $(KERNEL_PATH)/modules/vendor_ramdisk/*.ko)
-BOARD_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules/vendor_ramdisk/modules.load.recovery))
+BOARD_RECOVERY_KERNEL_MODULES_LOAD := \
+    nt36532_spi.ko \
+    xiaomi_touch.ko \
+    $(strip $(shell cat $(KERNEL_PATH)/modules/vendor_ramdisk/modules.load.recovery))
 
 # Kernel offsets (matching stock OS2.0.207.0)
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := product system system_ext odm vendor vendor_dlkm
