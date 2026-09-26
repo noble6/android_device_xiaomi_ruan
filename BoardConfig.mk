@@ -87,13 +87,15 @@ $(foreach sku, CN GL JP, \
 DEVICE_FRAMEWORK_MANIFEST_FILE += $(DEVICE_PATH)/configs/hidl/framework_manifest.xml
 
 # Kernel
-# TARGET_KERNEL_ADDITIONAL_FLAGS := TARGET_PRODUCT=ruan
-# TARGET_KERNEL_SOURCE := kernel/xiaomi/sm7435
-# TARGET_KERNEL_CONFIG := \
-#   gki_defconfig \
-#    vendor/parrot_GKI.config \
-#    vendor/ruan_GKI.config \
-#    vendor/debugfs.config
+TARGET_KERNEL_ADDITIONAL_FLAGS := TARGET_PRODUCT=ruan
+TARGET_KERNEL_SOURCE := kernel/xiaomi/sm7435
+TARGET_KERNEL_CLANG_VERSION := r416183b
+TARGET_KERNEL_CONFIG := \
+    gki_defconfig \
+    vendor/parrot_GKI.config \
+    vendor/ruan_GKI.config \
+    vendor/debugfs.config
+TARGET_KERNEL_ARCH := arm64
 
 BOARD_VENDOR_KERNEL_MODULES_BLOCKLIST_FILE := $(KERNEL_PATH)/modules/vendor_dlkm/modules.blocklist
 BOARD_VENDOR_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules/vendor_dlkm/modules.load))
@@ -106,15 +108,16 @@ BOARD_USES_DT := true
 BOARD_PREBUILT_DTBIMAGE_DIR := $(KERNEL_PATH)/dtbs
 BOARD_INCLUDE_DTB_IN_BOOTIMG := true
 BOARD_PREBUILT_DTBOIMAGE := $(KERNEL_PATH)/dtbo.img
-TARGET_FORCE_PREBUILT_KERNEL := true
-TARGET_KERNEL_SOURCE := $(KERNEL_PATH)/kernel-headers
-TARGET_NO_KERNEL_OVERRIDE := true
-TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/kernel
-PRODUCT_COPY_FILES += $(TARGET_PREBUILT_KERNEL):kernel
+# TARGET_FORCE_PREBUILT_KERNEL := true
+# TARGET_KERNEL_SOURCE := $(KERNEL_PATH)/kernel-headers
+# TARGET_NO_KERNEL_OVERRIDE := true
+# TARGET_PREBUILT_KERNEL := $(KERNEL_PATH)/kernel
+# PRODUCT_COPY_FILES += $(TARGET_PREBUILT_KERNEL):kernel
 
 TARGET_BOARD_INFO_FILE := device/xiaomi/ruan/board-info.txt
 
 BOARD_BOOT_HEADER_VERSION := 4
+BOARD_VENDOR_BOOT_HEADER_VERSION := 4
 BOARD_MKBOOTIMG_ARGS := --header_version $(BOARD_BOOT_HEADER_VERSION)
 BOARD_USES_GENERIC_KERNEL_IMAGE := true
 
@@ -276,6 +279,10 @@ BOARD_EXCLUDE_KERNEL_FROM_RECOVERY_IMAGE := true
 # Kernel modules path
 BOARD_VENDOR_RAMDISK_KERNEL_MODULES := $(wildcard $(KERNEL_PATH)/modules/vendor_ramdisk/*.ko)
 BOARD_VENDOR_KERNEL_MODULES := $(wildcard $(KERNEL_PATH)/modules/vendor_dlkm/*.ko)
+
+# Recovery kernel modules (for touch and other drivers in standalone recovery)
+BOARD_RECOVERY_KERNEL_MODULES := $(wildcard $(KERNEL_PATH)/modules/vendor_ramdisk/*.ko)
+BOARD_RECOVERY_KERNEL_MODULES_LOAD := $(strip $(shell cat $(KERNEL_PATH)/modules/vendor_ramdisk/modules.load.recovery))
 
 # Kernel offsets (matching stock OS2.0.207.0)
 BOARD_QTI_DYNAMIC_PARTITIONS_PARTITION_LIST := product system system_ext odm vendor vendor_dlkm
