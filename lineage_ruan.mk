@@ -15,6 +15,9 @@ $(call inherit-product, vendor/lineage/config/common_full_tablet.mk)
 # Inherit from ruan device
 $(call inherit-product, device/xiaomi/ruan/device.mk)
 
+# Inherit proprietary vendor blobs and configurations
+$(call inherit-product, vendor/xiaomi/ruan/ruan-vendor.mk)
+
 PRODUCT_NAME := lineage_ruan
 PRODUCT_DEVICE := ruan
 PRODUCT_MANUFACTURER := Xiaomi

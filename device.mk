@@ -487,3 +487,4 @@ PRODUCT_PACKAGES += \
 PRODUCT_COPY_FILES += \
     vendor/xiaomi/ruan/proprietary/vendor/firmware/novatek_ts_mp_boe.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/novatek_ts_mp_boe.bin \
     vendor/xiaomi/ruan/proprietary/vendor/firmware/novatek_ts_mp_csot.bin:$(TARGET_COPY_OUT_VENDOR)/firmware/novatek_ts_mp_csot.bin 
+PRODUCT_BUILD_VIRTUAL_MACHINE_IMAGES := false
